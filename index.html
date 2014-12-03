@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>	
-    <script src="js/gitUserSearchController.js"></script>	
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>	
+    <script src="js/gitUserSearchController.js"></script>
 	</head>
 
 	<body ng-controller="GitUserSearchController">
@@ -16,18 +17,15 @@
         <button class="btn">Search</button>
       </form>
 
-      <ul class="list-group">
-        <li class="list-group-item">
-          <img src="https://avatars2.githubusercontent.com/u/8898786?v=3&s=50">
-          <a href="https://github.com/Callisto13">Claudia</a>
-        </li>
-        <li class="list-group-item">
-          <img src="https://avatars2.githubusercontent.com/u/1968413?v=3&s=50">
-          <a href="https://github.com/ayoobembe">Ayo</a>
+      <ul class="list-group" ng-repeat="user in searchResult.items">
+        <li>
+        	<img ng-src="{{user.avatar_url}}&s=50">
+        	<a ng-href="{{user.html_url}}">{{user.login}}</a>
         </li>
       </ul>
+
 		</div>
-		<script src="js/app.js"></script>
+
 
 	</body>
 </html>
