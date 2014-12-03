@@ -28,10 +28,13 @@ describe('GitUserSearchController', function(){
       "html_url": "https://github.com/stephenlloyd"
   }];
 
-  it('should display search results', function() {
-    expect(scope.searchResult.items).toEqual(items);
-  });
-});
+	  it('should display search results', function() {
+	  	scope.searchTerm = 'hello';
+	  	scope.doSearch();
+	    expect(scope.searchResult.items).toEqual(items);
+	  });
+
+	});
 
 });
 
